@@ -1,4 +1,4 @@
-name: Sync and Optimize (Tag-Aligned)
+name: Sync and Optimize (Exact Tag Aligned)
 
 on:
   workflow_dispatch:
@@ -64,7 +64,6 @@ jobs:
           echo "upstream_tag=$LATEST_UPSTREAM_TAG" >> $GITHUB_OUTPUT
           echo "upstream_commit=$UPSTREAM_COMMIT" >> $GITHUB_OUTPUT
           
-          # 检查是否有未优化的更改或手动触发
           if [ "$UPSTREAM_COMMIT" = "$LOCAL_COMMIT" ] && [ "${{ github.event_name }}" != "workflow_dispatch" ]; then
             echo "No changes detected"
             echo "has_changes=false" >> $GITHUB_OUTPUT
@@ -130,33 +129,25 @@ jobs:
         run: |
           UPSTREAM_TAG="${{ steps.check_changes.outputs.upstream_tag }}"
           if [ -n "$UPSTREAM_TAG" ]; then
-            # 官方有 tag 则直接使用对齐的版本号
-            VERSION="${UPSTREAM_TAG}-optimized"
-            RAW_VERSION="${UPSTREAM_TAG}"
+            # 直接使用官方原生 Tag (例如 v1.1.93)
+            VERSION="${UPSTREAM_TAG}"
           else
-            # 官方无 tag 则使用日期+hash
             VERSION="v$(date +'%Y.%m.%d')-$(git rev-parse --short HEAD)"
-            RAW_VERSION="$VERSION"
           fi
           echo "version=$VERSION" >> $GITHUB_OUTPUT
-          echo "raw_version=$RAW_VERSION" >> $GITHUB_OUTPUT
           echo "Determined Version: $VERSION"
       
-      - name: Push optimize branch and tags
+      - name: Push optimize branch and tag
         if: |
           steps.check_changes.outputs.has_changes == 'true' &&
           (github.event.inputs.create_tag == 'true' || github.event_name == 'schedule' || github.event_name == 'workflow_dispatch')
         run: |
           VERSION="${{ steps.get_version.outputs.version }}"
-          RAW_VERSION="${{ steps.get_version.outputs.raw_version }}"
           
-          # 创建并推送优化版 Tag
+          # 创建并强推官方同名 Tag
           git tag -f "$VERSION" -m "Optimized release $VERSION with reduced memory"
-          git tag -f "$RAW_VERSION" -m "Release $RAW_VERSION (optimized)" || true
-          
           git push origin ${{ env.OPTIMIZE_BRANCH }} --force
           git push origin "$VERSION" --force
-          git push origin "$RAW_VERSION" --force || true
       
       - name: Create GitHub Release
         if: |
@@ -169,7 +160,7 @@ jobs:
           body: |
             ## 🚀 巨量引擎 Go SDK 内存优化版本 ${{ steps.get_version.outputs.version }}
             
-            基于官方 `${{ env.UPSTREAM_REPO }}` 自动同步并完成编译内存优化。
+            完全对齐官方版本号 `${{ steps.get_version.outputs.version }}`，已完成编译内存优化（消除点导入）。
             
             ### ⚡ 核心性能提升
             - **编译内存占用**：从官方的 **5~8 GB 骤降至 1~2 GB (降低 75%+)**
@@ -179,10 +170,7 @@ jobs:
             ### 📦 安装使用方式
             
             ```bash
-            # 方式 1：直接使用 optimize 分支最新优化代码
-            go get github.com/${{ github.repository }}@${{ env.OPTIMIZE_BRANCH }}
-            
-            # 方式 2：使用对齐的语义化版本 Tag
+            # 直接使用官方同名版本号：
             go get github.com/${{ github.repository }}@${{ steps.get_version.outputs.version }}
             ```
             
