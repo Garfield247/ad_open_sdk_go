@@ -27,6 +27,9 @@ type StdProjectListV30ResponseDataListInnerAudience struct {
 	AudienceType *string `json:"audience_type,omitempty"`
 	//
 	AutoExtendTargets []*StdProjectListV30DataListAudienceAutoExtendTargets `json:"auto_extend_targets,omitempty"`
+	// 仅通信行业且非仅选穿山甲广告位时可用
+	Carrier               []*StdProjectListV30DataListAudienceCarrier             `json:"carrier,omitempty"`
+	CarrierRegionOptimize *StdProjectListV30DataListAudienceCarrierRegionOptimize `json:"carrier_region_optimize,omitempty"`
 	//
 	City                  []int64                                                 `json:"city,omitempty"`
 	ConvertedTimeDuration *StdProjectListV30DataListAudienceConvertedTimeDuration `json:"converted_time_duration,omitempty"`
@@ -41,13 +44,14 @@ type StdProjectListV30ResponseDataListInnerAudience struct {
 	ExcludeFlowPackage []int64                                              `json:"exclude_flow_package,omitempty"`
 	FilterOwnAwemeFans *StdProjectListV30DataListAudienceFilterOwnAwemeFans `json:"filter_own_aweme_fans,omitempty"`
 	//
-	FlowPackage        []int64                                                    `json:"flow_package,omitempty"`
-	Gender             *StdProjectListV30DataListAudienceGender                   `json:"gender,omitempty"`
-	Geolocation        *StdProjectListV30ResponseDataListInnerAudienceGeolocation `json:"geolocation,omitempty"`
-	HarmonyOsv         *StdProjectListV30DataListAudienceHarmonyOsv               `json:"harmony_osv,omitempty"`
-	HideIfConverted    *StdProjectListV30DataListAudienceHideIfConverted          `json:"hide_if_converted,omitempty"`
-	HideIfExists       *StdProjectListV30DataListAudienceHideIfExists             `json:"hide_if_exists,omitempty"`
-	InterestActionMode *StdProjectListV30DataListAudienceInterestActionMode       `json:"interest_action_mode,omitempty"`
+	FlowPackage []int64                                  `json:"flow_package,omitempty"`
+	Gender      *StdProjectListV30DataListAudienceGender `json:"gender,omitempty"`
+	//
+	Geolocation        []map[string]interface{}                             `json:"geolocation,omitempty"`
+	HarmonyOsv         *StdProjectListV30DataListAudienceHarmonyOsv         `json:"harmony_osv,omitempty"`
+	HideIfConverted    *StdProjectListV30DataListAudienceHideIfConverted    `json:"hide_if_converted,omitempty"`
+	HideIfExists       *StdProjectListV30DataListAudienceHideIfExists       `json:"hide_if_exists,omitempty"`
+	InterestActionMode *StdProjectListV30DataListAudienceInterestActionMode `json:"interest_action_mode,omitempty"`
 	//
 	InterestCategories []int64 `json:"interest_categories,omitempty"`
 	//

@@ -112,6 +112,7 @@ const (
 	AD_CONVERT_TYPE_LTV_ROI_SEVEN_EventManagerOptimizedGoalGetV2V30DataGoalsDeepGoalsDeepExternalAction               EventManagerOptimizedGoalGetV2V30DataGoalsDeepGoalsDeepExternalAction = "AD_CONVERT_TYPE_LTV_ROI_SEVEN"
 	AD_CONVERT_TYPE_LTV_ROI_THIRTY_EventManagerOptimizedGoalGetV2V30DataGoalsDeepGoalsDeepExternalAction              EventManagerOptimizedGoalGetV2V30DataGoalsDeepGoalsDeepExternalAction = "AD_CONVERT_TYPE_LTV_ROI_THIRTY"
 	AD_CONVERT_TYPE_LT_ROI_EventManagerOptimizedGoalGetV2V30DataGoalsDeepGoalsDeepExternalAction                      EventManagerOptimizedGoalGetV2V30DataGoalsDeepGoalsDeepExternalAction = "AD_CONVERT_TYPE_LT_ROI"
+	AD_CONVERT_TYPE_M2_SURRENDER_EventManagerOptimizedGoalGetV2V30DataGoalsDeepGoalsDeepExternalAction                EventManagerOptimizedGoalGetV2V30DataGoalsDeepGoalsDeepExternalAction = "AD_CONVERT_TYPE_M2SURRENDER"
 	AD_CONVERT_TYPE_MAP_SEARCH_EventManagerOptimizedGoalGetV2V30DataGoalsDeepGoalsDeepExternalAction                  EventManagerOptimizedGoalGetV2V30DataGoalsDeepGoalsDeepExternalAction = "AD_CONVERT_TYPE_MAP_SEARCH"
 	AD_CONVERT_TYPE_MESSAGE_EventManagerOptimizedGoalGetV2V30DataGoalsDeepGoalsDeepExternalAction                     EventManagerOptimizedGoalGetV2V30DataGoalsDeepGoalsDeepExternalAction = "AD_CONVERT_TYPE_MESSAGE"
 	AD_CONVERT_TYPE_MESSAGE_ACTION_EventManagerOptimizedGoalGetV2V30DataGoalsDeepGoalsDeepExternalAction              EventManagerOptimizedGoalGetV2V30DataGoalsDeepGoalsDeepExternalAction = "AD_CONVERT_TYPE_MESSAGE_ACTION"
@@ -180,6 +181,7 @@ const (
 	AD_CONVERT_TYPE_WECHAT_REGISTER_EventManagerOptimizedGoalGetV2V30DataGoalsDeepGoalsDeepExternalAction             EventManagerOptimizedGoalGetV2V30DataGoalsDeepGoalsDeepExternalAction = "AD_CONVERT_TYPE_WECHAT_REGISTER"
 	AD_CONVERT_TYPE_WECHAT_WECOM_ADD_EventManagerOptimizedGoalGetV2V30DataGoalsDeepGoalsDeepExternalAction            EventManagerOptimizedGoalGetV2V30DataGoalsDeepGoalsDeepExternalAction = "AD_CONVERT_TYPE_WECHAT_WECOM_ADD"
 	AD_CONVERT_TYPE_XPATH_EventManagerOptimizedGoalGetV2V30DataGoalsDeepGoalsDeepExternalAction                       EventManagerOptimizedGoalGetV2V30DataGoalsDeepGoalsDeepExternalAction = "AD_CONVERT_TYPE_XPATH"
+	AD_CONVERT_TYPE_INSURANCE_PAY_EventManagerOptimizedGoalGetV2V30DataGoalsDeepGoalsDeepExternalAction               EventManagerOptimizedGoalGetV2V30DataGoalsDeepGoalsDeepExternalAction = "AD_CONVERT_TYPE_INSURANCE_PAY"
 )
 
 // Ptr returns reference to event_manager_optimized_goal_get_v2_v3.0_data_goals_deep_goals_deep_external_action value

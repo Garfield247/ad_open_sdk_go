@@ -15,10 +15,10 @@ type ClueCouponCodeGetV2Status string
 
 // List of clue_coupon_code_get_v2_status
 const (
-	USED_ClueCouponCodeGetV2Status      ClueCouponCodeGetV2Status = "USED"
 	INVALID_ClueCouponCodeGetV2Status   ClueCouponCodeGetV2Status = "INVALID"
 	VALID_ClueCouponCodeGetV2Status     ClueCouponCodeGetV2Status = "VALID"
 	EXPIRED_ClueCouponCodeGetV2Status   ClueCouponCodeGetV2Status = "EXPIRED"
+	USED_ClueCouponCodeGetV2Status      ClueCouponCodeGetV2Status = "USED"
 	ABANDONED_ClueCouponCodeGetV2Status ClueCouponCodeGetV2Status = "ABANDONED"
 )
 

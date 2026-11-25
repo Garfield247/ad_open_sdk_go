@@ -112,6 +112,7 @@ const (
 	AD_CONVERT_TYPE_LTV_ROI_SEVEN_EventManagerDeepBidTypeGetV30DeepExternalAction               EventManagerDeepBidTypeGetV30DeepExternalAction = "AD_CONVERT_TYPE_LTV_ROI_SEVEN"
 	AD_CONVERT_TYPE_LTV_ROI_THIRTY_EventManagerDeepBidTypeGetV30DeepExternalAction              EventManagerDeepBidTypeGetV30DeepExternalAction = "AD_CONVERT_TYPE_LTV_ROI_THIRTY"
 	AD_CONVERT_TYPE_LT_ROI_EventManagerDeepBidTypeGetV30DeepExternalAction                      EventManagerDeepBidTypeGetV30DeepExternalAction = "AD_CONVERT_TYPE_LT_ROI"
+	AD_CONVERT_TYPE_M2_SURRENDER_EventManagerDeepBidTypeGetV30DeepExternalAction                EventManagerDeepBidTypeGetV30DeepExternalAction = "AD_CONVERT_TYPE_M2SURRENDER"
 	AD_CONVERT_TYPE_MAP_SEARCH_EventManagerDeepBidTypeGetV30DeepExternalAction                  EventManagerDeepBidTypeGetV30DeepExternalAction = "AD_CONVERT_TYPE_MAP_SEARCH"
 	AD_CONVERT_TYPE_MESSAGE_EventManagerDeepBidTypeGetV30DeepExternalAction                     EventManagerDeepBidTypeGetV30DeepExternalAction = "AD_CONVERT_TYPE_MESSAGE"
 	AD_CONVERT_TYPE_MESSAGE_ACTION_EventManagerDeepBidTypeGetV30DeepExternalAction              EventManagerDeepBidTypeGetV30DeepExternalAction = "AD_CONVERT_TYPE_MESSAGE_ACTION"
@@ -178,6 +179,7 @@ const (
 	AD_CONVERT_TYPE_WECHAT_REGISTER_EventManagerDeepBidTypeGetV30DeepExternalAction             EventManagerDeepBidTypeGetV30DeepExternalAction = "AD_CONVERT_TYPE_WECHAT_REGISTER"
 	AD_CONVERT_TYPE_WECHAT_WECOM_ADD_EventManagerDeepBidTypeGetV30DeepExternalAction            EventManagerDeepBidTypeGetV30DeepExternalAction = "AD_CONVERT_TYPE_WECHAT_WECOM_ADD"
 	AD_CONVERT_TYPE_XPATH_EventManagerDeepBidTypeGetV30DeepExternalAction                       EventManagerDeepBidTypeGetV30DeepExternalAction = "AD_CONVERT_TYPE_XPATH"
+	AD_CONVERT_TYPE_INSURANCE_PAY_EventManagerDeepBidTypeGetV30DeepExternalAction               EventManagerDeepBidTypeGetV30DeepExternalAction = "AD_CONVERT_TYPE_INSURANCE_PAY"
 )
 
 // Ptr returns reference to event_manager_deep_bid_type_get_v3.0_deep_external_action value
